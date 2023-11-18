@@ -1,0 +1,26 @@
+
+.myfade {
+    animation: fadeInAnimation ease 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+ 
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+.mytt {
+    
+    position: relative;
+    animation: myfirst 1s ease-in ;
+  }
+  
+
+@keyframes myfirst {
+    from {left: 800px;}
+  to {left: 0px;}
+  }
+
+ 
