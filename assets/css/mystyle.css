@@ -23,4 +23,11 @@
   to {left: 0px;}
   }
 
+ @media screen and (max-width: 500px) {
+    .mybtnfull{
+      width: 75%;
+      margin-top: 1.5%;
+    }
+  }
+
  
