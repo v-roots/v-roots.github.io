@@ -100,7 +100,7 @@
       </div>
     </header>
 
-     <!-- RESERVATION -->
+  <!-- RESERVATION -->
     <section class="pt-7 pt-md-9">
       <div class="container">
         <div class="row justify-content-center">
@@ -157,6 +157,11 @@
       <label class="visually-hidden" for="emailid">E-Mail</label>
       <input class="form-control" id="emailid" name="emailid" type="email" placeholder="E-Mail" required>
     </div>
+     <!-- Veranstaltungsort -->
+     <div class="mb-3">
+      <label class="visually-hidden" for="locationid">Veranstaltungsort</label>
+      <input class="form-control" id="locationid" name="location" type="text" placeholder="Veranstaltungsort" >
+    </div>
                 </div>
                 <div class="col-md-6">
 
@@ -164,9 +169,10 @@
 
                   <!-- Date -->
                   <div class="form-floating mb-3">
-                    <input class="form-control" id="date" name="date" type="date"  required>
-                     <label for="date">Gewünschtes Datum</label>
+                    <input class="form-control" id="date" name="date" type="date"  placeholder="Gewünschtes Datum" required>
+                    <label for="date">Gewünschtes Datum</label>
                   </div>
+                 
 
                   <!-- Time -->
                   <div class="form-floating mb-3">
@@ -179,18 +185,15 @@
                       <label class="visually-hidden" for="telefonnummer">Telefonnummer</label>
                       <input class="form-control" id="telefonnummerid" name="telefonnummer" type="number" placeholder="Telefonnummer" >
                     </div>
+
+                       <!-- Note -->
+                  <div class="mb-3">
+                    <label class="visually-hidden" for="noteid">Nachricht</label>
+                      <textarea class="form-control" id="noteid" name="noteid" placeholder="Nachricht" rows="3"  ></textarea>
+                      </div>
                 </div>
              
-                <div class="col-md-12">
-
-               
-
-                  <!-- Note -->
-                  <label class="visually-hidden" for="noteid">Nachricht</label>
-                    <textarea class="form-control" id="noteid" name="noteid" placeholder="Nachricht"  ></textarea>
-                  
-
-                </div>
+            
                 <div class="col text-center">
 
                   <button class="btn btn-outline-primary" type="submit" aria-label="Book on WhatsApp" id="bookwhatsapp"  >
@@ -211,12 +214,13 @@
 
                       let emailid=document.getElementById('emailid').value;
                       let telef=document.getElementById('telefonnummerid').value;
+                      let address=document.getElementById('locationid').value;
                       let notex=document.getElementById('noteid').value;
 
                      let btnw =document.getElementById("bookwhatsappx");
                       btnw.target="_blank";
-                        btnw.href= "https://wa.me/+41797950008?text=catering%20reservation%20for%20"+pers+"%20persons%20on%20"+day+"%20at%20"+time +" %0ACONTAKT %0A%20name%3A%20"+uname
-                                                                                              +"%0A%20e-mail%3A%20"+emailid+"%0A%20Telefonnummer%3A%20"+telef+"%0A%20Nachricht%3A%20"+notex
+                      btnw.href= "https://wa.me/+41797950008?text=catering%20reservation%20für%20"+pers+"%20personen%20on%20"+day+"%20am%20"+time +"Uhr%0AVeranstaltungsort%3A"+address
+                      +"%0ACONTAKT %0A%20name%3A%20"+uname+"%0A%20e-mail%3A%20"+emailid+"%0A%20Telefonnummer%3A%20"+telef+"%0A%20Nachricht%3A%20"+notex
                                                                                                 ;
                             btnw.click();
 
