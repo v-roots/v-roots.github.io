@@ -100,7 +100,7 @@
       </div>
     </header>
 
-    <!-- RESERVATION -->
+     <!-- RESERVATION -->
     <section class="pt-7 pt-md-9">
       <div class="container">
         <div class="row justify-content-center">
@@ -122,7 +122,7 @@
           <div class="col-lg-8">
 
             <!-- Form -->
-            <form id="reservationForm">
+            <form id="reservationFormme" onsubmit="bookwhats(event)" >
               <div class="row gx-3">
                 <div class="col-md-6">
 
@@ -131,7 +131,7 @@
 
                   <!-- Full name -->
                   <div class="mb-3">
-                    <label class="visually-hidden" for="user_name">Full name</label>
+                    <label class="visually-hidden" for="user_name">Vorname</label>
                     <input class="form-control" id="user_name" name="user_name" type="text" placeholder="Full name" required>
                   </div>
 
@@ -148,21 +148,15 @@
                   </div> -->
    <!-- Guests -->
    <div class="mb-3">
-    <label class="visually-hidden" for="guests">Guests</label>
-    <select class="form-select" id="guests" name="guests" required>
-      <option value="1">1 person</option>
-      <option value="2" selected="">2 persons</option>
-      <option value="3">3 persons</option>
-      <option value="4">4 persons</option>
-      <option value="5">5 persons</option>
-       <option value="6">6 persons</option>
-      <option value="7">7 persons</option>
-      <option value="8">8 persons</option>
-      <option value="9">9 persons</option>
-      <option value="10">10 persons</option>
-      <option value="15">15 persons</option>
-    </select>
+    <label class="visually-hidden" for="guests">Geschätzte Anzahl Personen</label>
+    <input class="form-control" type="number" id="guests" name="guests" placeholder="Geschätzte Anzahl Personen " required>
+     
   </div>
+    <!-- E-Mail -->
+    <div class="mb-3">
+      <label class="visually-hidden" for="emailid">E-Mail</label>
+      <input class="form-control" id="emailid" name="emailid" type="email" placeholder="E-Mail" required>
+    </div>
                 </div>
                 <div class="col-md-6">
 
@@ -171,34 +165,60 @@
                   <!-- Date -->
                   <div class="mb-3">
                     <label class="visually-hidden" for="date">Date</label>
-                    <input class="form-control" id="date" name="date" type="date" value="2021-02-12" required>
+                    <input class="form-control" id="date" name="date" type="date" placeholder="Gewünschtes Datum" required>
                   </div>
 
                   <!-- Time -->
                   <div class="mb-3">
                     <label class="visually-hidden" for="time">Time</label>
-                    <input class="form-control" id="time" name="time" type="time" value="18:00" required>
+                    <input class="form-control" id="time" name="time" type="time"  required>
                   </div>
+                  
+                    <!-- Telefonnummer -->
+                    <div class="mb-3">
+                      <label class="visually-hidden" for="telefonnummer">Telefonnummer</label>
+                      <input class="form-control" id="telefonnummerid" name="telefonnummer" type="number" placeholder="Telefonnummer" >
+                    </div>
+                </div>
+             
+                <div class="col-md-12">
+
+               
+
+                  <!-- Note -->
+                  <label class="visually-hidden" for="noteid">Nachricht</label>
+                    <textarea class="form-control" id="noteid" name="noteid" placeholder="Nachricht"  ></textarea>
+                  
 
                 </div>
                 <div class="col text-center">
 
-                  <a class="btn btn-outline-primary" aria-label="Book on WhatsApp" id="bookwhatsapp" onclick="bookwhats(this)" href="#" >
-                    Reserve a table
+                  <button class="btn btn-outline-primary" type="submit" aria-label="Book on WhatsApp" id="bookwhatsapp"  >
+                   Catering
+                  </button>
+                  <a  aria-label="Book on WhatsApp" id="bookwhatsappx"  href="#" hidden>
+                    Catering
                   </a>
-                
 
                   <script>
-                    function bookwhats(btnw){
+                    function bookwhats(e){
+                      e.preventDefault();
 
                       let day=document.getElementById('date').value;
                       let time=document.getElementById('time').value;
                       let pers=document.getElementById('guests').value;
                       let uname=document.getElementById('user_name').value;
 
-                     
+                      let emailid=document.getElementById('emailid').value;
+                      let telef=document.getElementById('telefonnummerid').value;
+                      let notex=document.getElementById('noteid').value;
+
+                     let btnw =document.getElementById("bookwhatsappx");
                       btnw.target="_blank";
-                      btnw.href= "https://wa.me/+41797950008?text=table%20reservation%20for%20"+pers+"%20persons%20on%20"+day+"%20at%20"+time+",at%20name%20"+uname;
+                      btnw.href= "https://wa.me/+41797950008?text=catering%20reservation%20for%20"+pers+"%20persons%20on%20"+day+"%20at%20"+time +" %0A,%20name%20"+uname
+                                                                                              +",%20e-mail%20"+emailid+",%20Telefonnummer%20"+telef+",%Nachricht%20"+notex
+                                                                                                ;
+                            btnw.click();
 
                     }
 
