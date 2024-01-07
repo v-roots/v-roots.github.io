@@ -165,13 +165,13 @@
                   <!-- Date -->
                   <div class="mb-3">
                     <label class="visually-hidden" for="date">Date</label>
-                    <input class="form-control" id="date" name="date" type="date" placeholder="Gewünschtes Datum" required>
+                    <input class="form-control" id="date" name="date" type="text" onfocus="(this.type='date')" placeholder="Gewünschtes Datum" required>
                   </div>
 
                   <!-- Time -->
                   <div class="mb-3">
                     <label class="visually-hidden" for="time">Time</label>
-                    <input class="form-control" id="time" name="time" type="time"  required>
+                    <input class="form-control" id="time" name="time" type="text" placeholder="HH:MM"  onfocus="(this.type='time')"  required>
                   </div>
                   
                     <!-- Telefonnummer -->
@@ -215,8 +215,8 @@
 
                      let btnw =document.getElementById("bookwhatsappx");
                       btnw.target="_blank";
-                      btnw.href= "https://wa.me/+41797950008?text=catering%20reservation%20for%20"+pers+"%20persons%20on%20"+day+"%20at%20"+time +" %0A,%20name%20"+uname
-                                                                                              +",%20e-mail%20"+emailid+",%20Telefonnummer%20"+telef+",%Nachricht%20"+notex
+                       btnw.href= "https://wa.me/+41797950008?text=catering%20reservation%20for%20"+pers+"%20persons%20on%20"+day+"%20at%20"+time +" %0ACONTAKT %0A %20name%20"+uname
+                                                                                              +"%0A %20e-mail%20"+emailid+"%0A %20Telefonnummer%20"+telef+"%0A %Nachricht%20"+notex
                                                                                                 ;
                             btnw.click();
 
