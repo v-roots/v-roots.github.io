@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Ausschluss von irrelevanten oder internen Verzeichnissen (anpassen falls vorhanden)
+Disallow: /assets/
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# Sitemap
 Sitemap: https://v-roots.ch/sitemap.xml
