@@ -2,6 +2,8 @@ User-agent: *
 Allow: /
 
 # Ausschluss von irrelevanten oder internen Verzeichnissen (anpassen falls vorhanden)
+Disallow: /gallery.html
+Disallow: /news-and-events.html
 Disallow: /assets/
 Disallow: /admin/
 Disallow: /cgi-bin/
