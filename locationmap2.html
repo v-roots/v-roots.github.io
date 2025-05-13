@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Standorte & Wochenplan | V-Roots Food Truck Bern</title>
+  <meta name="description" content="Finde heraus, wo der V-Roots Food Truck jede Woche steht. Standortübersicht für Bern, Gümligen und Wabern — frische Falafel und vegane Spezialitäten!" />
+  <meta name="robots" content="index, follow" />
+  <meta name="googlebot" content="index, follow" />
+
+  <meta property="og:title" content="Standorte & Wochenplan | V-Roots Food Truck Bern" />
+  <meta property="og:description" content="Wo du uns findest: Wöchentliche Food Truck Standorte in Bern, Gümligen und Wabern. Vegan, orientalisch & frisch!" />
+  <meta property="og:url" content="https://v-roots.ch/locationmap2" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://v-roots.ch/assets/img/menu.jpeg" />
+
+  <link rel="canonical" href="https://v-roots.ch/locationmap2/" />
+
+  <link rel="stylesheet" href="./assets/css/libs.bundle.css" />
+  <link rel="stylesheet" href="./assets/css/theme.bundle.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyLA_aruUq1yLXiQPls43XVNlPd3BATU0&callback=initMap" async defer></script>
+
+  <style>
+    body { font-family: 'Lato', sans-serif; }
+    .schedule {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f8f8f8;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+    }
+    .schedule h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .schedule ul {
+      list-style: none;
+      padding: 0;
+    }
+    .schedule li {
+      padding: 12px 0;
+      border-bottom: 1px solid #ddd;
+      font-size: 18px;
+    }
+    #map {
+      height: 500px;
+      width: 100%;
+      border-radius: 16px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="schedule">
+  <h1>Wo findest du uns diese Woche?</h1>
+  <ul>
+    <li><strong>Montag:</strong> Dunantstrasse 2, 3006 Bern (11:30–19:00)</li>
+    <li><strong>Mittwoch:</strong> Worbstrasse 179, 3073 Gümligen (11:30–19:00)</li>
+    <li><strong>Donnerstag:</strong> Dunantstrasse 2, 3006 Bern (11:30–19:00)</li>
+    <li><strong>Freitag:</strong> Seftigenstrasse 259, 3084 Wabern (11:30–19:00)</li>
+  </ul>
+</div>
+
+<div id="map"></div>
+
+<script>
+  function initMap() {
+    const today = new Date().getDay();
+    let position = { lat: 46.94809, lng: 7.44744 };
+
+    switch(today) {
+      case 1: position = { lat: 46.943078, lng: 7.460566 }; break; // Monday
+      case 3: position = { lat: 46.934060, lng: 7.498372 }; break; // Wednesday
+      case 4: position = { lat: 46.943078, lng: 7.460566 }; break; // Thursday
+      case 5: position = { lat: 46.930847, lng: 7.445786 }; break; // Friday
+    }
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: position,
+      styles: [
+        { "featureType": "all", "elementType": "geometry", "stylers": [{"color": "#ebe3cd"}] },
+        { "featureType": "all", "elementType": "labels.text.fill", "stylers": [{"color": "#5d4037"}] },
+        { "featureType": "water", "elementType": "geometry", "stylers": [{"color": "#c9e5f3"}] }
+      ]
+    });
+
+    new google.maps.Marker({
+      position: position,
+      map: map,
+      title: "V-Roots Food Truck Heute!",
+      icon: {
+        url: "./assets/img/truck-icon.png",
+        scaledSize: new google.maps.Size(42, 42)
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
