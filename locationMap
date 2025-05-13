@@ -18,6 +18,17 @@
 
     <link rel="canonical" href="https://v-roots.ch/locations/" />
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyLA_aruUq1yLXiQPls43XVNlPd3BATU0&callback=initMap" async defer></script>
+<style>
+  #map {
+    height: 500px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+</style>
+
+
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -146,7 +157,11 @@
               </li>
             </ul>
     
-    
+<div id="map"></div>
+
+
+
+
           </div>
           <div class="col-sm-4 text-center">
     
@@ -209,6 +224,46 @@
     
     <!-- Theme JS -->
     <script src="./assets/js/theme.bundle.js"></script>
+
+ <!-- Google script here begins -->
+<script>
+  function initMap() {
+    const foodTruckPosition = { lat: 46.936720140132586, lng:7.475571484658815 }; // Example: Bern city center
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 14,
+      center: foodTruckPosition,
+      styles: [
+        {
+          "featureType": "all",
+          "elementType": "geometry",
+          "stylers": [{"color": "#ebe3cd"}]
+        },
+        {
+          "featureType": "all",
+          "elementType": "labels.text.fill",
+          "stylers": [{"color": "#5d4037"}]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [{"color": "#c9e5f3"}]
+        }
+      ]
+    });
+
+    const marker = new google.maps.Marker({
+      position: foodTruckPosition,
+      map: map,
+      title: "V-Roots Food Truck",
+      icon: {
+        url: "./assets/img/truck-icon.png", // Optional custom icon
+        scaledSize: new google.maps.Size(40, 40)
+      }
+    });
+  }
+</script>
+<!-- Google script here ends -->
 
   </body>
 </html>
