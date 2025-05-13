@@ -257,7 +257,7 @@
       map: map,
       title: "V-Roots Food Truck",
       icon: {
-        url: "./assets/img/truck-icon.png", // Optional custom icon
+        url: "./assets/img/aussentruck.jpeg", // Optional custom icon
         scaledSize: new google.maps.Size(40, 40)
       }
     });
