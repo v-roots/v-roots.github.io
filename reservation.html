@@ -139,7 +139,8 @@
           <div class="col-lg-8">
 
             <!-- Form -->
-            <form id="reservationFormme" onsubmit="bookwhats(event)" >
+           <form id="reservationFormme" action="https://formsubmit.co/vegi.roots@gmail.com" method="POST">
+
               <div class="row gx-3">
                 <div class="col-md-6">
 
@@ -210,42 +211,15 @@
                       </div>
                 </div>
              
-            
-                <div class="col text-center">
+            <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Neue Catering Anfrage von der Website">
 
-                  <button class="btn btn-outline-primary" type="submit" aria-label="Book on WhatsApp" id="bookwhatsapp"  >
-                   Catering
-                  </button>
-                  <a  aria-label="Book on WhatsApp" id="bookwhatsappx"  href="#" hidden>
-                    Catering
-                  </a>
+               <div class="col text-center">
+  <button class="btn btn-outline-primary" type="submit">
+    Catering Anfrage absenden
+  </button>
+</div>
 
-                  <script>
-                    function bookwhats(e){
-                      e.preventDefault();
-
-                      let day=document.getElementById('date').value;
-                      let time=document.getElementById('time').value;
-                      let pers=document.getElementById('guests').value;
-                      let uname=document.getElementById('user_name').value;
-
-                      let emailid=document.getElementById('emailid').value;
-                      let telef=document.getElementById('telefonnummerid').value;
-                      let address=document.getElementById('locationid').value;
-                      let notex=document.getElementById('noteid').value;
-
-                     let btnw =document.getElementById("bookwhatsappx");
-                      btnw.target="_blank";
-                      btnw.href= "https://wa.me/+41797950008?text=Catering%20reservation%20für%20"+pers+"%20personen%20Am%20"+day+"%20um%20"+time +"Uhr%0AVeranstaltungsort%3A"+address
-                        +"%0AKontakt %0A%20name%3A%20"+uname+"%0A%20e-mail%3A%20"+emailid+"%0A%20Telefonnummer%3A%20"+telef+"%0A%20Nachricht%3A%20"+notex
-                                                                                                  ;
-                              btnw.click();
-                          
-                    }
-
-                  </script>
-
-                </div>
               </div>
             </form>
 
