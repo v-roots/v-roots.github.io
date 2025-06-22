@@ -142,6 +142,8 @@
          <form action="https://api.web3forms.com/submit" method="POST">
   <!-- Web3Forms access key -->
   <input type="hidden" name="access_key" value="fe00a8b2-ba3e-4909-8ee1-74b12bf966db">
+  <input type="hidden" name="redirect" value="https://v-roots.ch/reservation?success=1">
+
 
   <div class="row gx-3">
     <div class="col-md-6">
@@ -434,13 +436,30 @@ Bern
     
     <!--  -->
     <!-- TOAST -->
-    <div class="toast position-fixed bottom-0 start-50 translate-middle-x mb-3 mb-md-5" id="notification" role="alert" aria-live="assertive" aria-atomic="true">
-      <div class="d-flex">
-        <div class="toast-body mx-auto"></div>
-      </div>
+   <div class="toast position-fixed bottom-0 start-50 translate-middle-x mb-3 mb-md-5" id="notificationToast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body mx-auto">
+      🎉 Danke für deine Anfrage! Wir melden uns bald.
     </div>
+  </div>
+</div>
 
-    <!-- JAVASCRIPT -->
+    <script>
+  window.onload = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === '1') {
+      var toastEl = document.getElementById('notificationToast');
+      var toast = new bootstrap.Toast(toastEl);
+      toast.show();
+
+      // Remove ?success=1 from URL after showing
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  }
+</script>
+
+
+  <!-- JAVASCRIPT -->
     <!-- Vendor JS -->
     <script src="/assets/js/vendor.bundle.js"></script>
     
