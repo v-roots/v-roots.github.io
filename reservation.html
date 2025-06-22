@@ -436,17 +436,7 @@ Bern
     
     
     <!--  -->
-    <!-- TOAST -->
-  <div class="toast position-fixed bottom-0 start-50 translate-middle-x mb-3 mb-md-5" id="notificationToast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-  <div class="d-flex">
-    <div class="toast-body mx-auto">
-      🎉 Danke für deine Anfrage! Wir melden uns bald.
-    </div>
-  </div>
-</div>
-
-  
-
+ 
   <!-- JAVASCRIPT -->
     <!-- Vendor JS -->
     <script src="/assets/js/vendor.bundle.js"></script>
@@ -454,19 +444,7 @@ Bern
     <!-- Theme JS -->
     <script src="/assets/js/theme.bundle.js"></script>
 
-      <script>
-  window.onload = function() {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('success') === '1') {
-      var toastEl = document.getElementById('notificationToast');
-      var toast = new bootstrap.Toast(toastEl);
-      toast.show();
-
-      // Remove ?success=1 from URL after showing
-      window.history.replaceState({}, document.title, window.location.pathname);
-    }
-  }
-</script>
+  
 
   </body>
 </html>
