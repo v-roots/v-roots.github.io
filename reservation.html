@@ -155,7 +155,8 @@
         <input class="form-control" type="number" name="guests" placeholder="Geschätzte Anzahl Personen" min="1" required>
       </div>
       <div class="mb-3">
-        <input class="form-control" name="emailid" type="email" placeholder="E-Mail" required>
+        <input class="form-control" name="emailid" type="email" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" placeholder="E-Mail" title="Bitte eine gültige E-Mail-Adresse eingeben" required>
+
       </div>
       <div class="mb-3">
         <input class="form-control" name="location" type="text" placeholder="Veranstaltungsort">
