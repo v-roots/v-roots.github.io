@@ -149,7 +149,7 @@
   <div class="row gx-3">
     <div class="col-md-6">
       <div class="mb-3">
-        <input class="form-control" name="user_name" type="text" placeholder="vollständiger Name" required>
+        <input class="form-control" name="user_name" type="text" placeholder="Vollständiger Name" required>
       </div>
       <div class="mb-3">
         <input class="form-control" type="number" name="guests" placeholder="Geschätzte Anzahl Personen" min="1" required>
@@ -171,7 +171,7 @@
         <label>Zeitrahmen</label>
       </div>
       <div class="mb-3">
-        <input class="form-control" name="telefonnummer" type="tel" placeholder="Telefonnummer">
+       <input class="form-control" name="telefonnummer" type="tel" pattern="^[0-9+ ]+$" placeholder="Telefonnummer" title="Bitte nur Zahlen und Pluszeichen eingeben" required>
       </div>
       <div class="mb-3">
         <textarea class="form-control" name="noteid" placeholder="Nachricht" rows="3"></textarea>
