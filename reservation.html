@@ -47,20 +47,6 @@
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css" />
 </head>
 
-  <script>
-document.querySelector("form").addEventListener("submit", function(e) {
-    const dateInput = document.querySelector('input[name="Gewünschtes Datum"]');
-    const raw = dateInput.value;        // e.g. "2025-12-10"
-
-    if (raw) {
-        const [year, month, day] = raw.split("-");
-        const shortYear = year.slice(2);  // "25"
-        const formatted = `${day}/${month}/${shortYear}`; // "10/12/25"
-        dateInput.value = formatted;  // overwrite before submit
-    }
-});
-</script>
-
 
   <body>
 
@@ -464,6 +450,20 @@ Bern
     <script src="/assets/js/theme.bundle.js"></script>
   <!-- chatbot -->
     <!-- <script src="//code.tidio.co/mrt4dlnjafpai1plaz7vnt462w8zeut9.js" async></script>-->
+
+      <script>
+document.querySelector("form").addEventListener("submit", function(e) {
+    const dateInput = document.querySelector('input[name="Gewünschtes Datum"]');
+    const raw = dateInput.value;        // e.g. "2025-12-10"
+
+    if (raw) {
+        const [year, month, day] = raw.split("-");
+        const shortYear = year.slice(2);  // "25"
+        const formatted = `${day}/${month}/${shortYear}`; // "10/12/25"
+        dateInput.value = formatted;  // overwrite before submit
+    }
+});
+</script>
 
   </body>
 </html>
