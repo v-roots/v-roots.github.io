@@ -154,7 +154,7 @@
         <input class="form-control" name="Name" type="text" placeholder="Vollständiger Name" title="Name eingeben" required>
       </div>
       <div class="mb-3">
-        <input class="form-control" type="number" name="Geste" placeholder="Geschätzte Anzahl Personen" min="1" title="Anzahl eingeben" required>
+        <input class="form-control" type="number" name="Gäste" placeholder="Geschätzte Anzahl Personen" min="1" title="Anzahl eingeben" required>
       </div>
       <div class="mb-3">
         <input class="form-control" name="E-Mail" type="email" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$" placeholder="E-Mail" title="Eine gültige E-Mail-Adresse eingeben" required>
@@ -451,19 +451,7 @@ Bern
   <!-- chatbot -->
     <!-- <script src="//code.tidio.co/mrt4dlnjafpai1plaz7vnt462w8zeut9.js" async></script>-->
 
-      <script>
-document.querySelector("form").addEventListener("submit", function(e) {
-    const dateInput = document.querySelector('input[name="Gewünschtes Datum"]');
-    const raw = dateInput.value;        // e.g. "2025-12-10"
-
-    if (raw) {
-        const [year, month, day] = raw.split("-");
-        const shortYear = year.slice(2);  // "25"
-        const formatted = `${day}/${month}/${shortYear}`; // "10/12/25"
-        dateInput.value = formatted;  // overwrite before submit
-    }
-});
-</script>
+  
 
   </body>
 </html>
