@@ -199,38 +199,77 @@
           <div class="col-md-9 order-md-1">
 
             <!-- Form -->
-            <form class="block-decoration-2" name="gform" id="gform" enctype="text/plain"
-            action="https://docs.google.com/forms/d/e/1FAIpQLSdT7fnSr2vx9URuzA_Eo4JohyRVtGFRxXCXTn_9M4ePoFQ3jA/formResponse?"
-            target="hidden_iframe" onsubmit="submitted=true;"
-            >
+            <form class="block-decoration-2" action="https://api.web3forms.com/submit" method="POST">
 
-              <!-- Contact number (hidden) -->
-              <input type="hidden" name="contact_number">
+  <!-- Web3Forms access key -->
+  <input type="hidden" name="access_key" value="fe00a8b2-ba3e-4909-8ee1-74b12bf966db">
 
-              <!-- Name -->
-              <div class="mb-3">
-                <label class="visually-hidden" for="entry.660642360">Nachname, Vorname</label>
-                <input class="form-control" id="entry.660642360" name="entry.660642360" type="text" placeholder="Nachname, Vorname" required />
-              </div>
+  <!-- Redirect after submit -->
+  <input type="hidden" name="redirect" value="https://v-roots.ch/contact-success">
 
-              <!-- Email -->
-              <div class="mb-3">
-                <label class="visually-hidden" for="entry.1079728005">E-mail addresse</label>
-                <input class="form-control" id="entry.1079728005" name="entry.1079728005" type="email" placeholder="E-mail addresse" required />
-              </div>
+  <!-- Email subject -->
+  <input type="hidden" name="subject" value="Neue Kontaktanfrage von V-Roots Website">
 
-              <!-- Message -->
-              <div class="mb-3">
-                <label class="visually-hidden" for="entry.1061746891">Nachricht</label>
-                <textarea class="form-control" id="entry.1061746891" name="entry.1061746891" rows="10" placeholder="Nachricht" required></textarea>
-              </div>
+  <!-- Sender name -->
+  <input type="hidden" name="from_name" value="V-Roots Kontaktformular">
 
-              <!-- Button -->
-              <button class="btn btn-outline-primary" type="submit">
-                Sende Nachricht
-              </button>
+  <!-- Name -->
+  <div class="mb-3">
+    <label class="visually-hidden" for="name">Nachname, Vorname</label>
+    <input 
+      class="form-control" 
+      id="name" 
+      name="Name" 
+      type="text" 
+      placeholder="Nachname, Vorname" 
+      required
+    />
+  </div>
 
-            </form>
+  <!-- Email -->
+  <div class="mb-3">
+    <label class="visually-hidden" for="email">E-Mail Adresse</label>
+    <input 
+      class="form-control" 
+      id="email" 
+      name="E-Mail" 
+      type="email" 
+      placeholder="E-Mail Adresse" 
+      required
+    />
+  </div>
+
+  <!-- Telefonnummer -->
+  <div class="mb-3">
+    <label class="visually-hidden" for="phone">Telefonnummer</label>
+    <input 
+      class="form-control" 
+      id="phone" 
+      name="Telefonnummer" 
+      type="tel" 
+      placeholder="Telefonnummer (optional)"
+    />
+  </div>
+
+  <!-- Message -->
+  <div class="mb-3">
+    <label class="visually-hidden" for="message">Nachricht</label>
+    <textarea 
+      class="form-control" 
+      id="message" 
+      name="Nachricht" 
+      rows="10" 
+      placeholder="Nachricht" 
+      required
+    ></textarea>
+  </div>
+
+  <!-- Button -->
+  <button class="btn btn-outline-primary" type="submit">
+    Sende Nachricht
+  </button>
+
+</form>
 
           </div>
         
