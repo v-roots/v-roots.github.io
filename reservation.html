@@ -166,9 +166,17 @@
     </div>
     <div class="col-md-6">
       <div class="form-floating mb-3">
-        <input class="form-control" name="Gewünschtes Datum" type="date" placeholder="Gewünschtes Datum" required>
-        <label>Gewünschtes Datum</label>
-      </div>
+  <input 
+    class="form-control" 
+    name="Gewünschtes Datum" 
+    type="text" 
+    placeholder="TT/MM/JJJJ"
+    pattern="^(0[1-9]|[12][0-9]|3[01])\/(0[1-9]|1[0-2])\/(20[2-9][0-9])$"
+    title="Bitte Datum im Format TT/MM/JJJJ eingeben (z.B. 25/12/2026)"
+    required
+  >
+  <label>Gewünschtes Datum (TT/MM/JJJJ)</label>
+</div>
       <div class="form-floating mb-3">
         <input class="form-control" name="Zeit" type="time" required>
         <label>Zeitrahmen</label>
